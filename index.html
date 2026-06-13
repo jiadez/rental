@@ -9,14 +9,16 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC',sans-serif;background:#F7F5F2;color:#1A1A1A;min-height:100vh}
 .topbar{background:#185FA5;color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .topbar h1{font-size:16px;font-weight:600}
-.dot{width:8px;height:8px;border-radius:50%;background:#9FE1CB;display:inline-block;margin-right:6px}
-.dot.spin{background:#FAC775;animation:blink 1s infinite}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.dot.ok{background:#9FE1CB}
+.dot.loading{background:#FAC775;animation:blink 1s infinite}
+.dot.err{background:#F09595}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 #ss{font-size:12px;opacity:0.85}
 .toolbar{display:flex;gap:8px;padding:12px 16px;flex-wrap:wrap;align-items:center;background:#fff;border-bottom:1px solid #E8E5E0;position:sticky;top:49px;z-index:90}
 .si{flex:1;min-width:140px;padding:8px 12px;border:1px solid #DDD9D3;border-radius:8px;font-size:14px;background:#F7F5F2}
 .si:focus{outline:none;border-color:#185FA5}
-button{padding:8px 16px;border:1px solid #DDD9D3;border-radius:8px;background:#fff;color:#1A1A1A;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+button{padding:8px 16px;border:1px solid #DDD9D3;border-radius:8px;background:#fff;color:#1A1A1A;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:inherit}
 button:hover{background:#F0EDE8}
 button.pri{background:#185FA5;color:#fff;border-color:#185FA5}
 button.pri:hover{background:#0C447C}
@@ -55,7 +57,7 @@ button.del:hover{background:#FCEBEB}
 .modal{background:#fff;border-radius:14px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,0.18)}
 .mh{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #F0EDE8;position:sticky;top:0;background:#fff;z-index:1}
 .mh h2{font-size:15px;font-weight:600}
-.mc{background:none;border:none;font-size:20px;cursor:pointer;color:#9E9890;line-height:1}
+.mc{background:none;border:none;font-size:20px;cursor:pointer;color:#9E9890;line-height:1;font-family:inherit}
 .mb{padding:18px}
 .fg{margin-bottom:16px}
 .fl{display:block;font-size:12px;font-weight:600;color:#6B6560;margin-bottom:6px}
@@ -63,38 +65,40 @@ input[type=text],.fi,select,textarea{width:100%;padding:9px 12px;border:1px soli
 input[type=text]:focus,.fi:focus,select:focus,textarea:focus{outline:none;border-color:#185FA5;background:#fff}
 textarea{resize:vertical;min-height:75px}
 .cbg{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:7px}
-.cbi{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #DDD9D3;border-radius:8px;cursor:pointer;font-size:13px;transition:all 0.15s}
+.cbi{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #DDD9D3;border-radius:8px;cursor:pointer;font-size:13px}
 .cbi input{accent-color:#185FA5}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
 .pt{position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;border:1px solid #E8E5E0}
 .pt img{width:100%;height:100%;object-fit:cover}
-.pd{position:absolute;top:4px;right:4px;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
-.uz{border:2px dashed #DDD9D3;border-radius:8px;padding:18px;text-align:center;cursor:pointer;font-size:13px;color:#9E9890;transition:all 0.15s}
+.pd{position:absolute;top:4px;right:4px;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit}
+.uz{border:2px dashed #DDD9D3;border-radius:8px;padding:18px;text-align:center;cursor:pointer;font-size:13px;color:#9E9890}
 .uz:hover{border-color:#185FA5;color:#185FA5}
 .upmsg{font-size:13px;color:#BA7517;padding:8px 0;text-align:center;font-weight:500}
 .rr{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
 .re{display:inline-flex;align-items:center;gap:4px;background:#EBF1F9;color:#0C447C;padding:4px 9px;border-radius:5px;font-size:12px}
-.rd{background:none;border:none;color:#A32D2D;cursor:pointer;font-size:14px;padding:0;line-height:1}
+.rd{background:none;border:none;color:#A32D2D;cursor:pointer;font-size:14px;padding:0;line-height:1;font-family:inherit}
 .ar{display:flex;gap:8px;margin-top:8px}
 .ar input{flex:1}
 .mf{display:flex;gap:8px;justify-content:flex-end;padding:14px 18px;border-top:1px solid #F0EDE8;position:sticky;bottom:0;background:#fff}
 .lb{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:300;display:flex;align-items:center;justify-content:center}
 .lb img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:8px}
-.lbc{position:absolute;top:14px;right:18px;color:#fff;font-size:26px;cursor:pointer;background:none;border:none}
-.lbn{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:26px;cursor:pointer;background:rgba(255,255,255,0.12);border:none;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center}
+.lbc{position:absolute;top:14px;right:18px;color:#fff;font-size:26px;cursor:pointer;background:none;border:none;font-family:inherit}
+.lbn{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:26px;cursor:pointer;background:rgba(255,255,255,0.12);border:none;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-family:inherit}
 .hidden{display:none!important}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:9px 20px;border-radius:20px;font-size:13px;font-weight:500;z-index:400;pointer-events:none;opacity:0;transition:opacity 0.3s;color:#fff;white-space:nowrap}
 .toast.show{opacity:1}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .empty{padding:60px 20px;text-align:center;color:#9E9890;font-size:14px}
+.errbanner{background:#FDEDEB;color:#A32D2D;padding:10px 16px;text-align:center;font-size:13px;display:none}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <h1><span class="dot spin" id="dot"></span>租屋評估表</h1>
+  <h1><span class="dot loading" id="dot"></span>租屋評估表</h1>
   <span id="ss">連線中…</span>
 </div>
+<div class="errbanner" id="errbanner">⚠️ 無法連線到資料庫，請稍後再試</div>
 <div class="toolbar">
   <input class="si" type="text" placeholder="搜尋地址、備註…" oninput="doFilter(this.value)">
   <button class="pri" onclick="openAdd()">＋ 新增物件</button>
@@ -123,9 +127,9 @@ textarea{resize:vertical;min-height:75px}
         </div>
       </div>
       <div class="fg">
-        <label class="fl">照片</label>
+        <label class="fl">照片（上傳至 Cloudinary，所有人可見）</label>
         <div class="uz" onclick="document.getElementById('fi2').click()">
-          📷 點擊上傳照片（可多選）<br><span style="font-size:11px;opacity:0.7">照片存至 Cloudinary，所有人可見</span>
+          📷 點擊上傳照片（可多選）
         </div>
         <div class="upmsg hidden" id="upmsg">⏳ 上傳中，請稍候…</div>
         <input type="file" id="fi2" accept="image/*" multiple style="display:none" onchange="handlePhotos(event)">
@@ -149,11 +153,13 @@ textarea{resize:vertical;min-height:75px}
 <div class="toast" id="toast"></div>
 
 <script>
+// ════ 設定 ════
 const CLOUD_NAME = 'dyn9ekdjp';
 const UPLOAD_PRESET = 'rental_unsigned';
 const BIN_ID = '6a2d8279da38895dfebaaf4d';
 const API_KEY = '$2a$10$ZxeUb6QdPXLL2yG43jQOAuysTo0FOgxe4WbQfmNlNbFC6ICFGoR3W';
-const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+const BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
+const HEADERS = {'Content-Type':'application/json','X-Access-Key':API_KEY,'X-Bin-Versioning':'false'};
 
 const FEATS=[{k:'water',l:'台水'},{k:'electric',l:'台電'},{k:'bike',l:'子母車位'},{k:'dispenser',l:'飲水機'},{k:'elevator',l:'電梯'},{k:'subsidy',l:'租補助'}];
 const SEED=[
@@ -167,13 +173,79 @@ const SEED=[
 
 let items=[], editId=null, curP=[], curR=[], lbP=[], lbI=0, fq='', upCount=0;
 
-function sc(it){let s=0;if(it.water)s+=15;if(it.electric)s+=15;if(it.elevator)s+=20;if(it.bike)s+=15;if(it.dispenser)s+=10;if(it.subsidy)s+=15;if(it.balcony==='大')s+=10;else if(it.balcony==='中')s+=5;return s;}
-
-function setSyncing(on){
-  document.getElementById('dot').className='dot'+(on?' spin':'');
-  document.getElementById('ss').textContent=on?'同步中…':'已同步 — 所有人共用';
+// ════ 資料庫 ════
+function setSyncing(state){
+  const dot=document.getElementById('dot');
+  const ss=document.getElementById('ss');
+  if(state==='ok'){dot.className='dot ok';ss.textContent='已同步 — 所有裝置共用';}
+  else if(state==='loading'){dot.className='dot loading';ss.textContent='同步中…';}
+  else{dot.className='dot err';ss.textContent='連線失敗';}
 }
 
+async function loadData(){
+  setSyncing('loading');
+  document.getElementById('errbanner').style.display='none';
+  try{
+    const r=await fetch(BIN_URL+'/latest',{headers:{'X-Access-Key':API_KEY}});
+    if(!r.ok) throw new Error('fetch fail '+r.status);
+    const d=await r.json();
+    const rec=d.record;
+    if(Array.isArray(rec) && rec.length>0 && !rec[0].init){
+      items=rec;
+    } else {
+      items=SEED;
+      await saveData(true);
+    }
+    setSyncing('ok');
+  }catch(e){
+    console.error('loadData error',e);
+    setSyncing('err');
+    document.getElementById('errbanner').style.display='block';
+    items=SEED;
+  }
+  render();
+}
+
+async function saveData(silent){
+  if(!silent) setSyncing('loading');
+  try{
+    const r=await fetch(BIN_URL,{method:'PUT',headers:HEADERS,body:JSON.stringify(items)});
+    if(!r.ok) throw new Error('save fail '+r.status);
+    setSyncing('ok');
+    return true;
+  }catch(e){
+    console.error('saveData error',e);
+    setSyncing('err');
+    showToast('儲存失敗，請檢查網路連線',false);
+    return false;
+  }
+}
+
+// 每30秒自動重新整理
+setInterval(async()=>{
+  try{
+    const r=await fetch(BIN_URL+'/latest',{headers:{'X-Access-Key':API_KEY}});
+    if(!r.ok) return;
+    const d=await r.json();
+    const rec=d.record;
+    if(Array.isArray(rec) && JSON.stringify(rec)!==JSON.stringify(items)){
+      items=rec;
+      render();
+    }
+    setSyncing('ok');
+  }catch(e){}
+},30000);
+
+// ════ 評分 ════
+function sc(it){
+  let s=0;
+  if(it.water)s+=15;if(it.electric)s+=15;if(it.elevator)s+=20;
+  if(it.bike)s+=15;if(it.dispenser)s+=10;if(it.subsidy)s+=15;
+  if(it.balcony==='大')s+=10;else if(it.balcony==='中')s+=5;
+  return s;
+}
+
+// ════ Toast ════
 function showToast(msg,ok=true){
   const t=document.getElementById('toast');
   t.style.background=ok?'#3B6D11':'#A32D2D';
@@ -181,57 +253,29 @@ function showToast(msg,ok=true){
   setTimeout(()=>t.classList.remove('show'),2400);
 }
 
-async function loadData(){
-  setSyncing(true);
-  try{
-    const r=await fetch(BIN_URL+'/latest',{headers:{'X-Access-Key':API_KEY}});
-    const d=await r.json();
-    const data=d.record;
-    if(Array.isArray(data)&&data.length>0&&!data[0].init){
-      items=data;
-    } else {
-      items=SEED;
-      await saveData();
-    }
-  }catch(e){
-    items=SEED;
-  }
-  setSyncing(false);
-  render();
-}
-
-async function saveData(){
-  setSyncing(true);
-  try{
-    await fetch(BIN_URL,{
-      method:'PUT',
-      headers:{'Content-Type':'application/json','X-Access-Key':API_KEY},
-      body:JSON.stringify(items)
-    });
-  }catch(e){ showToast('儲存失敗，請檢查網路',false); }
-  setSyncing(false);
-}
-
+// ════ Cloudinary 上傳 ════
 async function uploadPhoto(file){
   const fd=new FormData();
   fd.append('file',file);
   fd.append('upload_preset',UPLOAD_PRESET);
-  const r=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,{method:'POST',body:fd});
-  if(!r.ok)throw new Error('upload failed');
+  const r=await fetch('https://api.cloudinary.com/v1_1/'+CLOUD_NAME+'/image/upload',{method:'POST',body:fd});
+  if(!r.ok) throw new Error('upload fail');
   return (await r.json()).secure_url;
 }
 
 async function handlePhotos(e){
-  const files=Array.from(e.target.files);if(!files.length)return;
+  const files=Array.from(e.target.files);
+  if(!files.length) return;
   upCount=files.length;
   document.getElementById('upmsg').classList.remove('hidden');
   document.getElementById('sb').disabled=true;
   for(const f of files){
     try{
       const url=await uploadPhoto(f);
-      curP.push(url);renderP();
+      curP.push(url);
+      renderP();
     }catch(err){
-      showToast('照片上傳失敗，請確認 Cloudinary 設定',false);
+      showToast('照片上傳失敗，請確認 Cloudinary upload preset 為 rental_unsigned',false);
     }
     upCount--;
   }
@@ -241,11 +285,11 @@ async function handlePhotos(e){
 }
 
 function renderP(){
-  document.getElementById('pg').innerHTML=curP.map((u,i)=>`
-    <div class="pt"><img src="${u}" alt=""><button class="pd" onclick="rmP(${i})">×</button></div>`).join('');
+  document.getElementById('pg').innerHTML=curP.map((u,i)=>`<div class="pt"><img src="${u}"><button class="pd" onclick="rmP(${i})">×</button></div>`).join('');
 }
 function rmP(i){curP.splice(i,1);renderP();}
 
+// ════ 渲染卡片 ════
 function render(){
   const q=fq.toLowerCase();
   const list=items.filter(i=>i.address.toLowerCase().includes(q)||(i.notes||'').toLowerCase().includes(q));
@@ -254,7 +298,9 @@ function render(){
 }
 
 function cardHTML(it){
-  const s=sc(it),ph=it.photos&&it.photos.length?it.photos[0]:null,pc=it.photos?it.photos.length:0;
+  const s=sc(it);
+  const ph=it.photos&&it.photos.length?it.photos[0]:null;
+  const pc=it.photos?it.photos.length:0;
   const tags=FEATS.map(f=>`<span class="tag ${it[f.k]?'y':'n'}">${it[f.k]?'✓':'✗'} ${f.l}</span>`).join('');
   const note=it.notes?`<div class="note">📝 ${it.notes}</div>`:'';
   const rqs=it.requirements&&it.requirements.length?`<div class="reqs">${it.requirements.map(r=>`<span class="rt">${r}</span>`).join('')}</div>`:'';
@@ -262,7 +308,7 @@ function cardHTML(it){
   const bal=it.balcony?`<div class="meta">🌿 陽台：${it.balcony}</div>`:'';
   return`<div class="card">
     <div class="cphoto" onclick="openLb('${it.id}')">
-      ${ph?`<img src="${ph}" alt="物件照片">`:`<div class="nophoto"><svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>尚無照片</span></div>`}
+      ${ph?`<img src="${ph}" alt="">`:`<div class="nophoto"><svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>尚無照片</span></div>`}
       <span class="vb ${it.visited?'y':'n'}">${it.visited?'✅ 已看':'待看'}</span>
       ${pc>1?`<span class="pcnt">${pc} 張</span>`:''}
     </div>
@@ -274,23 +320,28 @@ function cardHTML(it){
     </div>
     <div class="cf">
       <button onclick="openEdit('${it.id}')">✏️ 編輯</button>
-      <button class="del" onclick="del('${it.id}')">🗑 刪除</button>
+      <button class="del" onclick="delItem('${it.id}')">🗑 刪除</button>
     </div>
   </div>`;
 }
 
+// ════ 表單 ════
 function buildCbs(it){return FEATS.map(f=>`<label class="cbi"><input type="checkbox" id="cb_${f.k}" ${it&&it[f.k]?'checked':''}> ${f.l}</label>`).join('');}
 
 function openAdd(){
   editId=null;curP=[];curR=[];
   document.getElementById('mt').textContent='新增物件';
   ['fa','fp','fv','fn'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('fbal').value='';document.getElementById('fvis').checked=false;
+  document.getElementById('fbal').value='';
+  document.getElementById('fvis').checked=false;
   document.getElementById('cbs').innerHTML=buildCbs(null);
-  renderR();renderP();document.getElementById('ov').classList.remove('hidden');
+  renderR();renderP();
+  document.getElementById('ov').classList.remove('hidden');
 }
+
 function openEdit(id){
-  const it=items.find(i=>i.id===id);if(!it)return;
+  const it=items.find(i=>i.id===id);
+  if(!it) return;
   editId=id;curP=[...(it.photos||[])];curR=[...(it.requirements||[])];
   document.getElementById('mt').textContent='編輯物件';
   document.getElementById('fa').value=it.address;
@@ -300,38 +351,59 @@ function openEdit(id){
   document.getElementById('fn').value=it.notes||'';
   document.getElementById('fvis').checked=!!it.visited;
   document.getElementById('cbs').innerHTML=buildCbs(it);
-  renderR();renderP();document.getElementById('ov').classList.remove('hidden');
+  renderR();renderP();
+  document.getElementById('ov').classList.remove('hidden');
 }
+
 function closeM(){document.getElementById('ov').classList.add('hidden');}
 document.getElementById('ov').addEventListener('click',e=>{if(e.target===document.getElementById('ov'))closeM();});
 
 async function saveItem(){
-  if(upCount>0){showToast('照片還在上傳中，請稍候',false);return;}
+  if(upCount>0){showToast('照片上傳中，請稍候',false);return;}
   const addr=document.getElementById('fa').value.trim();
   if(!addr){alert('請輸入地址');return;}
-  const obj={address:addr,price:document.getElementById('fp').value.trim(),viewtime:document.getElementById('fv').value.trim(),balcony:document.getElementById('fbal').value,notes:document.getElementById('fn').value.trim(),visited:document.getElementById('fvis').checked,photos:[...curP],requirements:[...curR]};
+  const obj={
+    address:addr,
+    price:document.getElementById('fp').value.trim(),
+    viewtime:document.getElementById('fv').value.trim(),
+    balcony:document.getElementById('fbal').value,
+    notes:document.getElementById('fn').value.trim(),
+    visited:document.getElementById('fvis').checked,
+    photos:[...curP],
+    requirements:[...curR]
+  };
   FEATS.forEach(f=>{obj[f.k]=document.getElementById('cb_'+f.k).checked;});
-  if(editId){const i=items.findIndex(x=>x.id===editId);items[i]={...items[i],...obj};}
-  else{obj.id=Date.now().toString();items.push(obj);}
-  await saveData();render();closeM();
-  showToast(editId?'已更新':'已新增物件');
+  if(editId){
+    const i=items.findIndex(x=>x.id===editId);
+    items[i]={...items[i],...obj};
+  } else {
+    obj.id=Date.now().toString();
+    items.push(obj);
+  }
+  const ok=await saveData();
+  if(ok){render();closeM();showToast(editId?'已更新':'已新增物件');}
 }
-async function del(id){
-  if(!confirm('確定要刪除這個物件嗎？'))return;
-  items=items.filter(i=>i.id!==id);await saveData();render();showToast('已刪除');
+
+async function delItem(id){
+  if(!confirm('確定要刪除這個物件嗎？')) return;
+  items=items.filter(i=>i.id!==id);
+  const ok=await saveData();
+  if(ok){render();showToast('已刪除');}
 }
 
 function renderR(){document.getElementById('rr').innerHTML=curR.map((r,i)=>`<span class="re">${r}<button class="rd" onclick="rmR(${i})">×</button></span>`).join('');}
 function addReq(){const inp=document.getElementById('ri');const v=inp.value.trim();if(!v)return;if(!curR.includes(v)){curR.push(v);renderR();}inp.value='';}
 function rmR(i){curR.splice(i,1);renderR();}
 
+// ════ Lightbox ════
 function openLb(id){const it=items.find(i=>i.id===id);if(!it||!it.photos||!it.photos.length)return;lbP=it.photos;lbI=0;document.getElementById('lbi').src=lbP[0];document.getElementById('lb').classList.remove('hidden');}
 function closeLb(){document.getElementById('lb').classList.add('hidden');}
 function lbNav(d){lbI=(lbI+d+lbP.length)%lbP.length;document.getElementById('lbi').src=lbP[lbI];}
+
 function doFilter(v){fq=v;render();}
 
+// ════ 啟動 ════
 loadData();
-setInterval(loadData, 30000);
 </script>
 </body>
 </html>
